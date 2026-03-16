@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://do6vok08aqubt"]
+
+[ext_resource type="Texture2D" uid="uid://bb58b1x0b6lfg" path="res://Assets/placeholder_2.png" id="1_r2tsw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r2tsw"]
+size = Vector2(16, 16)
+
+[node name="trampa" type="Area2D" groups=["trampa"]]
+
+[node name="Placeholder2" type="Sprite2D" parent="."]
+texture = ExtResource("1_r2tsw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["trampa"]]
+shape = SubResource("RectangleShape2D_r2tsw")

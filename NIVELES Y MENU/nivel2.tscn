@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcbmy45u0j24v"]
+
+[ext_resource type="PackedScene" uid="uid://dyqqbd7nk8v3h" path="res://Funcionalidad/TileSet.tscn" id="1_mr1fs"]
+[ext_resource type="PackedScene" uid="uid://sj3p3dhl7lgy" path="res://Funcionalidad/timer.tscn" id="2_ty6yr"]
+
+[node name="Nivel2" type="Node2D"]
+
+[node name="Tileset" parent="." instance=ExtResource("1_mr1fs")]
+position = Vector2(135, 377)
+
+[node name="Timer" parent="." instance=ExtResource("2_ty6yr")]
+
+[node name="Camera2D" type="Camera2D" parent="Timer"]
+position = Vector2(579, 325)

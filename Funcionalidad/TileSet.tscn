@@ -1,0 +1,30 @@
+[gd_scene load_steps=8 format=3 uid="uid://dyqqbd7nk8v3h"]
+
+[ext_resource type="Texture2D" uid="uid://d0nepfq1s51ga" path="res://Assets/placeholcer.png" id="1_iv0vk"]
+[ext_resource type="PackedScene" uid="uid://do6vok08aqubt" path="res://peligro/pua.tscn" id="2_hqd1x"]
+[ext_resource type="PackedScene" uid="uid://bv7g5ov4msuob" path="res://Funcionalidad/meta.tscn" id="3_lhq4d"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tahxc"]
+texture = ExtResource("1_iv0vk")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8, -8, -8)
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_bsels"]
+scenes/1/scene = ExtResource("2_hqd1x")
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_fl4on"]
+scenes/1/scene = ExtResource("3_lhq4d")
+
+[sub_resource type="TileSet" id="TileSet_lpr72"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_tahxc")
+sources/1 = SubResource("TileSetScenesCollectionSource_bsels")
+sources/2 = SubResource("TileSetScenesCollectionSource_fl4on")
+
+[node name="Tileset" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_set = SubResource("TileSet_lpr72")

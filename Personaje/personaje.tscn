@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://ju7y6dpfksuh"]
+
+[ext_resource type="Script" uid="uid://bmkg2w6rjv1m6" path="res://personaje.gd" id="1_imvb3"]
+[ext_resource type="Texture2D" uid="uid://bg00xlwcme8mk" path="res://Assets/New Piskel.png" id="2_0kevx"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rbp53"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lr5g2"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_imvb3"]
+size = Vector2(34, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0kevx"]
+size = Vector2(30, 30)
+
+[node name="Personaje" type="CharacterBody2D" groups=["player"]]
+position = Vector2(21, 19)
+script = ExtResource("1_imvb3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_rbp53")
+
+[node name="NewPiskel" type="Sprite2D" parent="."]
+texture = ExtResource("2_0kevx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_lr5g2")
+debug_color = Color(0.7466402, 0.46250284, 5.7756904e-07, 0.41960785)
+
+[node name="Detector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detector"]
+shape = SubResource("RectangleShape2D_imvb3")
+
+[node name="DetectorMuerte" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectorMuerte" groups=["player"]]
+shape = SubResource("RectangleShape2D_0kevx")
+debug_color = Color(0.8662404, 1.1070073e-06, 0.4315292, 0.41960785)
+
+[connection signal="area_entered" from="Detector" to="." method="_on_detector_area_entered"]
+[connection signal="area_entered" from="DetectorMuerte" to="." method="_on_detector_muerte_area_entered"]

@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bv7g5ov4msuob"]
+
+[ext_resource type="Script" uid="uid://vj7hgtanfs2a" path="res://meta.gd" id="1_av4e8"]
+[ext_resource type="Texture2D" uid="uid://ddxji8m72rrh4" path="res://Assets/placeholder_3.png" id="1_tatqr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0l33i"]
+size = Vector2(32, 32)
+
+[node name="Meta" type="Area2D" groups=["goal"]]
+script = ExtResource("1_av4e8")
+
+[node name="Placeholder3" type="Sprite2D" parent="."]
+position = Vector2(18, 19)
+texture = ExtResource("1_tatqr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(18, 19)
+shape = SubResource("RectangleShape2D_0l33i")

@@ -1,0 +1,20 @@
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://cifm2tv0x6tmc"]
+
+[ext_resource type="Texture2D" uid="uid://d0nepfq1s51ga" path="res://Assets/placeholcer.png" id="1_bj0sc"]
+[ext_resource type="PackedScene" uid="uid://do6vok08aqubt" path="res://peligro/pua.tscn" id="2_uffxo"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_02dqp"]
+texture = ExtResource("1_bj0sc")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_tce0d"]
+scenes/1/scene = ExtResource("2_uffxo")
+
+[resource]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_02dqp")
+sources/3 = SubResource("TileSetScenesCollectionSource_tce0d")

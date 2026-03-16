@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bd2l5m5efwkl"]
+
+[ext_resource type="Script" uid="uid://d1c4plur8nwc8" path="res://NIVELES Y MENU/fin.gd" id="1_mcays"]
+
+[node name="Fin" type="Control" unique_id=1644159149]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_mcays")
+
+[node name="ContenedorResultados" type="VBoxContainer" parent="." unique_id=285519411]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="tiempo" type="Label" parent="ContenedorResultados" unique_id=919684816]
+layout_mode = 2
+text = "TABLA DE TIEMPOs"
+
+[node name="Button" type="Button" parent="ContenedorResultados" unique_id=2135946605]
+layout_mode = 2
+text = "VOLVER"
+
+[connection signal="pressed" from="ContenedorResultados/Button" to="." method="_on_button_pressed"]

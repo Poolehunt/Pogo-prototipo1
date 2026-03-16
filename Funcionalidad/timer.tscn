@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://sj3p3dhl7lgy"]
+
+[ext_resource type="Script" uid="uid://dby3m6kmi5b3c" path="res://timer.gd" id="1_5bnu0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5bnu0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dqabs"]
+font_size = 41
+
+[sub_resource type="LabelSettings" id="LabelSettings_o4j7e"]
+font_size = 41
+
+[sub_resource type="LabelSettings" id="LabelSettings_sjh2h"]
+font_size = 20
+
+[node name="Timer" type="CanvasLayer" groups=["timer"]]
+script = ExtResource("1_5bnu0")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+label_settings = SubResource("LabelSettings_5bnu0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LabelTiempo" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "00:00:00"
+label_settings = SubResource("LabelSettings_dqabs")
+
+[node name="LabelMejorTiempo" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "--:--:--"
+label_settings = SubResource("LabelSettings_o4j7e")
+
+[node name="LabelTurno" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Turno: "
+label_settings = SubResource("LabelSettings_sjh2h")
